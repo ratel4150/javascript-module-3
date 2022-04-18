@@ -18,8 +18,29 @@
  *    the response data returned by the fetch json() method.
  */
 
+/*  const url="https://jsonplaceholder.typicode.com/users/1"
+ return fetch(url).then(response=>response.json())
+ .then(data=>
+     displayContents(data)) */
+
 // Finish the code of the function
-function exercise18() {}
+
+
+ async function exercise18() {
+    const url = 'https://jsonplaceholder.typicode.com/users/1'
+    const res = await fetch(url)
+    const jsonRes = await res.json().then(data=>
+        displayContents(data))
+    return jsonRes
+    /* getAsyncFn()
+    .then(data=>
+        displayContents(data)) */
+        
+
+
+}
+
+
 
 // Don’t change the code bellow this line
 function displayContents(data) {
