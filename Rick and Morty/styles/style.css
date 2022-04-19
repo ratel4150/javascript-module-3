@@ -1,0 +1,93 @@
+
+@font-face {
+    font-family: 'transrobotic';
+    src: url(/fonts/sf_transrobotics/SF_TransRobotics.ttf);
+}
+#root{
+    background-color: lightgrey;
+    width: 100vw;
+    height: 100vh;
+}
+#root__header{
+    height: 10%;
+    border: 1px solid;
+}
+#root__body{
+    height: 85%;
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+}
+
+#body__aside{
+    width: 10%;
+    background-color: rgba(0, 0, 0, 0.934);
+    box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+    
+}
+#body__aside ul{
+    width: 100%;
+    
+}
+
+#li{
+    font-family: 'transrobotic';
+    font-size: 15px;
+    list-style-type: none;
+    color: white;
+    max-width: 100%;
+    
+}
+#li:hover{
+    color: rgb(251, 147, 202);
+}
+
+#body__body{
+    width: 90%;
+    
+    padding: 2%;
+   /*  display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-image: url(/images/morty.png);
+    top: 10px;
+    
+    
+}
+#title{
+    color: white;
+    font-family: console;
+    height: 5%;
+}
+#subTitle{
+ color: white;
+}
+#videoCardContainer{
+    height: 95%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+#videoCard{
+    height: 40%;
+    width: 20%;
+    border: 1px solid;
+      backdrop-filter: blur(9px) saturate(188%);
+    -webkit-backdrop-filter: blur(9px) saturate(188%);
+    background-color: rgba(255, 255, 255, 0.11);
+    border-radius: 12px;
+    border: 1px solid rgba(209, 219, 212, 0.3);
+}
+
+#root__footer{
+   
+
+}
