@@ -39,20 +39,34 @@ h2.id = "title";
 bodyBodyRoot.appendChild(h2);
 h2.innerText = "EPISODES";
 
-const subTitle=document.createElement("p")
-subTitle.id="subTitle"
-bodyBodyRoot.appendChild(subTitle)
-subTitle.innerText="Date | Episode"
+const subTitle = document.createElement("p");
+subTitle.id = "subTitle";
+bodyBodyRoot.appendChild(subTitle);
+subTitle.innerText = "Date | Episode";
 
 const videoCardContainer = document.createElement("div");
 videoCardContainer.id = "videoCardContainer";
 bodyBodyRoot.appendChild(videoCardContainer);
 
-const videoCard = document.createElement("div");
-videoCard.id = "videoCard";
-videoCardContainer.appendChild(videoCard);
+/* const characterCard = document.createElement("div");
+characterCard.className = "characterCard";
+videoCardContainer.appendChild(characterCard);
 
-const videoCard1 = document.createElement("div");
+const imageCharacterCard = document.createElement("img");
+imageCharacterCard.className = "imageCharacterCard";
+characterCard.appendChild(imageCharacterCard);
+
+const nameCharacterCard = document.createElement("h3");
+nameCharacterCard.className = "nameCharacterCard";
+characterCard.appendChild(nameCharacterCard);
+nameCharacterCard.innerText = "NameCharacter";
+
+const featuresCharacterCard = document.createElement("p");
+featuresCharacterCard.className = "nameCharacterCard";
+characterCard.appendChild(featuresCharacterCard);
+featuresCharacterCard.innerText = "Especies | Status"; */
+
+/* const videoCard1 = document.createElement("div");
 videoCard1.id = "videoCard";
 videoCardContainer.appendChild(videoCard1);
 
@@ -78,12 +92,9 @@ videoCardContainer.appendChild(videoCard6);
 
 const videoCard7 = document.createElement("div");
 videoCard7.id = "videoCard";
-videoCardContainer.appendChild(videoCard7);
-
-
+videoCardContainer.appendChild(videoCard7); */
 
 //style
-
 
 const searchEpisode = () => {
   fetch("https://rickandmortyapi.com/api/episode")
@@ -101,39 +112,87 @@ liUlAsideBodyRoot.style.color="white" */
   console.log(episodes);
 
   for (const results in episodes.results) {
-    console.log(results + ":" + episodes[results]);
+    /*  console.log(results + ":"  + episodes.results[results].characters ); */
     const liUlAsideBodyRoot = document.createElement("li");
     ulAsideBodyRoot.appendChild(liUlAsideBodyRoot);
     liUlAsideBodyRoot.id = "li";
     liUlAsideBodyRoot.innerText = "episode " + results;
-  }
-  
-  
-  const lis=document.getElementById("body__aside").querySelector("ul").querySelectorAll("li")
-  lis.forEach(element => {
-      element.addEventListener("click",(e)=>{
-          e.preventDefault()
-          h2.innerText=e.target.innerText.toUpperCase()
-          let number=parseInt(h2.innerText.slice(8)) 
-          
-          console.log(episodes.results[number].characters[0]);
-
-          fetch(episodes.results[number].characters[0])
+    /* for (const character in episodes.results[results].characters) {
+      
+      fetch(episodes.results[results].characters[character])
           .then((res) => res.json())
           .then(data=>console.log(data))
           .catch(console.log("error"));
-          subTitle.innerText=episodes.results[number].air_date+" | "+episodes.results[number].episode
+     
+    } */
+  }
+  function clearCharacter(){
+    let character=document.querySelector(".characterCard")
+    console.log(character);
+    character.classList.remove("characterCard")
+  }
 
-      })
-      
+  function getCharacter(peoples) {
+    console.log(peoples);
+    
+
+    
+    const characterCard = document.createElement("div");
+    characterCard.className = "characterCard";
+    videoCardContainer.appendChild(characterCard);
+    
+
+    const imageCharacterCard = document.createElement("img");
+    imageCharacterCard.className = "imageCharacterCard";
+    characterCard.appendChild(imageCharacterCard);
+    imageCharacterCard.src=peoples.image
+
+    const nameCharacterCard = document.createElement("h3");
+    nameCharacterCard.className = "nameCharacterCard";
+    characterCard.appendChild(nameCharacterCard);
+    nameCharacterCard.innerText = "NameCharacter";
+    nameCharacterCard.innerText=peoples.name
+
+    const featuresCharacterCard = document.createElement("p");
+    featuresCharacterCard.className = "nameCharacterCard";
+    characterCard.appendChild(featuresCharacterCard);
+    featuresCharacterCard.innerText = peoples.species+" | "+peoples.status;
+  }
+
+  const lis = document
+    .getElementById("body__aside")
+    .querySelector("ul")
+    .querySelectorAll("li");
+  lis.forEach((element) => {
+    element.addEventListener("click", (e) => {
+      e.preventDefault();
+      h2.innerText = e.target.innerText.toUpperCase();
+      let number = parseInt(h2.innerText.slice(8));
+
+      console.log(episodes.results[number].characters);
+
+      for (const character in episodes.results[number].characters) {
+        fetch(episodes.results[number].characters[character])
+          .then((res) => res.json())
+          .then(getCharacter)
+          .catch(console.log("error"));
+      }
+
+      /* fetch(episodes.results[number].characters[0])
+          .then((res) => res.json())
+          .then(data=>console.log(data))
+          .catch(console.log("error")); */
+      /* for (const key in object) {
+           
+          } */
+      subTitle.innerText =
+        episodes.results[number].air_date +
+        " | " +
+        episodes.results[number].episode;
+    });
   });
 }
 const ready = () => {
   searchEpisode();
-  
-  
 };
 document.addEventListener("DOMContentLoaded", ready);
-
-
-
