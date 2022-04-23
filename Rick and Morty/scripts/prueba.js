@@ -5,9 +5,26 @@ const headerRoot = document.createElement("div");
 headerRoot.id = "root__header";
 root.appendChild(headerRoot);
 
+const divLogoHeaderRoot=document.createElement("div")
+divLogoHeaderRoot.className="divLogoHeaderRoot"
+headerRoot.appendChild(divLogoHeaderRoot)
+
+const divIconsHeaderRoot=document.createElement("div")
+divIconsHeaderRoot.className="divIconsHeaderRoot"
+headerRoot.appendChild(divIconsHeaderRoot)
+
+const titleHeaderRoot=document.createElement("h1")
+titleHeaderRoot.className="titleHeaderRoot"
+divLogoHeaderRoot.appendChild(titleHeaderRoot)
+titleHeaderRoot.innerText="Rick & Morty API"
+
 const bodyRoot = document.createElement("div");
 bodyRoot.id = "root__body";
 root.appendChild(bodyRoot);
+
+const footerRoot = document.createElement("div");
+footerRoot.id = "root_footer";
+root.appendChild(footerRoot);
 
 const asideBodyRoot = document.createElement("div");
 asideBodyRoot.id = "body__aside";
@@ -67,30 +84,7 @@ subWindowEpisode1.className="subWindowEpisode"
 const imgSubWindowEpisode=document.createElement("img")
 imgSubWindowEpisode.className="imgSubWindowEpisode"
 
-/* const backGroundRandom={
-  backGround1:{
-    color:"rgb(2,0,36)",
-    effect:"linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%)"
 
-  },
-  backGround2:{
-    color:"rgb(34,193,195)",
-    effect:"linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%)"
-
-  },
-  backGround3:{
-    color:"rgb(63,94,251)",
-    effect:"radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%)"
-
-  },
-  backGround4:{
-    color:"rgb(131,58,180)",
-    effect:"background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);"
-
-  },
-
-
-} */
 
 let rickAndMorty={
   "characters": "https://rickandmortyapi.com/api/character",
@@ -112,7 +106,8 @@ aLiUlAsideBodyRoot.className="aLiUlAsideBodyRoot"
 
     ulAsideBodyRoot.appendChild(liUlAsideBodyRoot) 
   liUlAsideBodyRoot.appendChild(aLiUlAsideBodyRoot)
-  aLiUlAsideBodyRoot.innerText="Episodio "+element.id
+  /* aLiUlAsideBodyRoot.innerText="Episodio "+element.id */
+  aLiUlAsideBodyRoot.innerHTML="<i class=' fa fa-solid fa-video fa-xl'> episode "+ element.id+"</i>"
     
   });
 /* ------------------------------------------------- */
@@ -350,39 +345,13 @@ const getAllElements=(nElements)=>{
 
 
 const searchEpisode = () => {
-  fetch(rickAndMorty.episodes+"/"+getAllElements(nElements=31)+"")
+  fetch(rickAndMorty.episodes+"/"+getAllElements(nElements=51)+"")
     .then((res) => res.json())
     .then(setEpisodes)
     .catch((e)=>console.log(e));
 };
 
 
-/* const setCharacters=(characters)=>{
-  console.log(characters);
-
-}
- */
-
-/* const getAllCharacters=(nCharacters)=>{
-  count1=0
-  let allCharacters=[]
-  
-  while (count1<=nCharacters) {
-    
-    allCharacters.push(count1)
-    count1+=1
-  }
-  return allCharacters.toLocaleString()
-}
- */
-
-
-/* const searchCaharacters = () => {
-  fetch(rickAndMorty.characters+"/"+getAllCharacters(nCharacters=821)+"")
-    .then((res) => res.json())
-    .then(setCharacters)
-    .catch((e)=>console.log(e));
-}; */
 
 const ready = () => {
   searchEpisode()

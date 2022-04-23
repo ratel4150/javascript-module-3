@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
 @font-face {
   font-family: "transrobotic";
   src: url(/fonts/sf_transrobotics/SF_TransRobotics.ttf);
@@ -8,13 +10,36 @@
   box-sizing: border-box;
 }
 #root {
-  background-color: lightgrey;
+  
   width: 100vw;
   height: 100vh;
 }
 #root__header {
+  background-color:lightgray;
+  border-bottom: 1px solid gray;
   height: 10%;
-  border: 1px solid;
+  z-index: 999;
+  box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  display: flex;
+  justify-content: row;
+  justify-content: space-around;
+}
+
+.divLogoHeaderRoot{
+  width: 30%;
+  padding: 20px;
+
+
+}
+.titleHeaderRoot{
+  margin: 0px;
+  font-family: 'Staatliches', cursive;
+  color: rgba(65, 63, 63, 0.811);
+}
+
+.divIconsHeaderRoot{
+  width: 70%;
+
 }
 #root__body {
   height: 85%;
@@ -26,13 +51,15 @@
 
 #body__aside {
   width: 10%;
-  background-color: rgba(0, 0, 0, 0.934);
-  box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px,
-    rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+  background-color: rgba(25, 23, 23, 0.934);
+  overflow-y: scroll;
+  overflow-x: hidden;
+  
 }
 
 .ulAsideBodyRoot {
   width: 100%;
+  padding: 20px;
 }
 
 .liUlAsideBodyRoot {
@@ -43,7 +70,8 @@
 }
 
 .aLiUlAsideBodyRoot {
-  font-family: "transrobotic";
+  /* font-family: "transrobotic"; */
+  font-family: 'Roboto', sans-serif;
   font-size: 15px;
   color: white;
 }
@@ -75,14 +103,17 @@
 }
 #imgLogo {
   width: 60%;
+  filter: drop-shadow(15px 5px 3px #343435);
 }
 #title {
   color: white;
   font-family: console;
   height: 5%;
+  margin: 10px;
 }
 #subTitle {
   color: white;
+  margin: 20px;
 }
 #videoCardContainer {
   height: 100%;
@@ -161,7 +192,6 @@
   width: 80%;
   height: 80%;
 
-  /* From https://css.glass */
   background: rgba(255, 255, 255, 0);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -200,7 +230,11 @@
   height: 50%;
   border: 1px solid white;
 }
-#root__footer {
+#root_footer {
+  height: 5%;
+  border-top: gray 1px solid;
+  border-bottom: gray 1px solid;
+  background-color: lightgray;
 }
 
 ::-webkit-scrollbar {
