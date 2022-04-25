@@ -1,5 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Staatliches&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Slabo+27px&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
 @font-face {
   font-family: "transrobotic";
   src: url(/fonts/sf_transrobotics/SF_TransRobotics.ttf);
@@ -10,36 +14,52 @@
   box-sizing: border-box;
 }
 #root {
-  
   width: 100vw;
   height: 100vh;
 }
 #root__header {
-  background-color:lightgray;
+  background-color: lightgray;
   border-bottom: 1px solid gray;
   height: 10%;
   z-index: 999;
-  box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
+    rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px,
+    rgba(0, 0, 0, 0.09) 0px 32px 16px;
   display: flex;
   justify-content: row;
   justify-content: space-around;
 }
 
-.divLogoHeaderRoot{
+.divLogoHeaderRoot {
   width: 30%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
   padding: 20px;
-
-
 }
-.titleHeaderRoot{
-  margin: 0px;
-  font-family: 'Staatliches', cursive;
+.titleHeaderRoot {
+  display: block;
+  margin-top: auto;
+  margin-bottom: auto;
+
+  font-family: "Staatliches", cursive;
   color: rgba(65, 63, 63, 0.811);
 }
 
-.divIconsHeaderRoot{
+.divIconsHeaderRoot {
   width: 70%;
-
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.IconsHeaderRoot {
+  display: block;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 3px;
+  margin-right: 3px;
+  color: gray;
+  font-size: 20px;
 }
 #root__body {
   height: 85%;
@@ -54,7 +74,6 @@
   background-color: rgba(25, 23, 23, 0.934);
   overflow-y: scroll;
   overflow-x: hidden;
-  
 }
 
 .ulAsideBodyRoot {
@@ -71,7 +90,7 @@
 
 .aLiUlAsideBodyRoot {
   /* font-family: "transrobotic"; */
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 15px;
   color: white;
 }
@@ -149,43 +168,125 @@
 .imageCharacterCard {
   max-width: 100%;
 }
+
+
 .nameCharacterCard {
   color: white;
+  margin: 10px;
   text-align: center;
-  margin: 0px;
+  
+  font-family: 'Fredoka One', cursive;
+  filter: drop-shadow(1px 1px 1px black);
+  letter-spacing: 2px;
 }
 .featuresCharacterCard {
+  margin: 5px;
   color: white;
   text-align: center;
+  filter: drop-shadow(1px 1px 1px black);
+  font-family: 'Slabo 27px', serif;
+}
+.genderCharacterCard{
+  margin: 5px;
+  filter: drop-shadow(1px 1px 1px black);
+  font-family: 'Slabo 27px', serif;
+
+}
+.characterSubWindowEpisode{
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.imgSubWindowEpisode{
+  border-radius: 25px;
+  border: 1px white outset;
+  filter: drop-shadow(0 0 0.75rem rgb(5, 5, 5));
+}
+.labelNameCharacter{
+  color: white;
+  font-family: 'Fredoka One', cursive;
+  font-size: 26px;
+  filter: drop-shadow(1px 1px 1px black);
+  /* font-family: 'Patrick Hand', cursive; */
+
+}
+.labelTypeCharacter{
+  font-family: 'Patrick Hand', cursive;
+  filter: drop-shadow(1px 1px 1px black);
+  font-size: 20px;
+
+}
+.labelStatusCharacter{
+  font-family: 'Patrick Hand', cursive;
+  filter: drop-shadow(1px 1px 1px black);
+  font-size: 20px;
+
+}
+
+.labelLocationCharacter{
+  font-family: 'Patrick Hand', cursive;
+  filter: drop-shadow(1px 1px 1px black);
+  font-size: 20px;
+
 }
 .containerButtonEpisode {
   margin: 0px;
   padding: 10px;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
 }
 .buttonEpisode {
   width: 60px;
+  margin-left: 5px;
+  margin-right: 5px;
   height: 30px;
-  box-shadow: inset 0px 1px 0px 0px #ffffff;
-  background: linear-gradient(to bottom, #ededed 5%, #dfdfdf 100%);
-  background-color: #ededed;
-  border-radius: 6px;
   border: 1px solid #dcdcdc;
-  display: inline-block;
   cursor: pointer;
-  color: #777777;
-  font-family: Arial;
-
   font-weight: bold;
   padding: 6px 24px;
   text-decoration: none;
   text-shadow: 0px 1px 0px #ffffff;
+  background: rgba(251, 251, 251, 0.37);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+.buttonEpisode1 {
+  width: 60px;
+  margin-left: 5px;
+  margin-right: 5px;
+  height: 30px;
+  border: 1px solid #dcdcdc;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 6px 24px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #ffffff;
+  background: rgba(251, 251, 251, 0.37);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
 }
 .buttonEpisode a {
   font-size: 15px;
+  color: white;
+  filter: drop-shadow(1px 1px 1px gray);
 }
+
+.buttonEpisode1 a {
+  font-size: 15px;
+  color: white;
+  filter: drop-shadow(1px 1px 1px gray);
+}
+
+
+
 .containerEpisode {
   display: block;
   position: absolute;
@@ -193,7 +294,7 @@
   height: 80%;
 
   background: rgba(255, 255, 255, 0);
-  border-radius: 16px;
+  border-radius: 40px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(5.9px);
   -webkit-backdrop-filter: blur(5.9px);
@@ -202,11 +303,12 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  border-radius: 40px;
 }
 
 .containerButtonExit {
   height: 5%;
-  border: 1px solid white;
+  
 }
 .buttonExit {
   color: black;
@@ -214,22 +316,56 @@
 
 .windowEpisode {
   height: 95%;
-  border: 1px solid white;
+  
   display: flex;
   flex-direction: column;
   justify-content: space-around;
 }
 .subWindowEpisode:nth-child(1) {
   height: 50%;
-  border: 1px solid white;
+  
   display: flex;
-  justify-content: space-around;
   flex-direction: row;
+
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
 .subWindowEpisode:nth-child(2) {
   height: 50%;
-  border: 1px solid white;
+  
+  display: flex;
+  flex-direction: column;
+
+  justify-content: space-around;
+  flex-wrap: wrap;
+  overflow-x: scroll;
 }
+.divSubWindowEpisode{
+  
+  width: auto;
+  padding: 5px;
+  border: 1px dotted white;
+  filter: drop-shadow(1px 1px 1px gray);
+ 
+
+}
+.titleDivSubWindowEpisode{
+  color: white;
+  filter: drop-shadow(1px 1px 1px #000000);
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  
+}
+
+.titleEpisodeDivSubWindowEpisode{
+  background-color: black;
+ color: white;
+}
+.titleDateCreateDivSubWindowEpisode{
+  color: white;
+
+}
+
+
 #root_footer {
   height: 5%;
   border-top: gray 1px solid;

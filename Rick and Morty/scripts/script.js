@@ -45,6 +45,7 @@ bodyBodyRoot.appendChild(videoCardContainer);
 
 const containerEpisode=document.createElement("div")
     containerEpisode.className="containerEpisode"
+    
 
 const containerButtonExit=document.createElement("div")
 containerButtonExit.className="containerButtonExit"
