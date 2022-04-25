@@ -41,6 +41,11 @@ const footerRoot = document.createElement("div");
 footerRoot.id = "root_footer";
 root.appendChild(footerRoot);
 
+const nameFooterRoot = document.createElement("p");
+nameFooterRoot.className = "nameFooterRoot";
+footerRoot.appendChild(nameFooterRoot);
+nameFooterRoot.innerText = "designed by ratel";
+
 const asideBodyRoot = document.createElement("div");
 asideBodyRoot.id = "body__aside";
 bodyRoot.appendChild(asideBodyRoot);
@@ -79,6 +84,9 @@ bodyBodyRoot.appendChild(videoCardContainer);
 const containerEpisode = document.createElement("div");
 containerEpisode.className = "containerEpisode";
 
+const containerEpisode1 = document.createElement("div");
+containerEpisode1.className = "containerEpisode1";
+
 const containerButtonExit = document.createElement("div");
 containerButtonExit.className = "containerButtonExit";
 
@@ -88,6 +96,15 @@ buttonExit.className = "buttonExit";
 const windowEpisode = document.createElement("div");
 windowEpisode.className = "windowEpisode";
 
+const windowEpisode1 = document.createElement("div");
+windowEpisode1.className = "windowEpisode1";
+
+const subWindowEpisode3 = document.createElement("div");
+subWindowEpisode3.className = "subWindowEpisode";
+
+const subWindowEpisode4 = document.createElement("div");
+subWindowEpisode4.className = "subWindowEpisode";
+
 const subWindowEpisode = document.createElement("div");
 subWindowEpisode.className = "subWindowEpisode";
 
@@ -95,27 +112,38 @@ const subWindowEpisode1 = document.createElement("div");
 subWindowEpisode1.className = "subWindowEpisode";
 /* aqui hacer etiquetas para que no se repitan en el forEach */
 
-const characterSubWindowEpisode=document.createElement("div")
-characterSubWindowEpisode.className="characterSubWindowEpisode"
+const characterSubWindowEpisode = document.createElement("div");
+characterSubWindowEpisode.className = "characterSubWindowEpisode";
 
-const labelNameCharacter=document.createElement("p")
-labelNameCharacter.className="labelNameCharacter"
+const labelNameCharacter = document.createElement("p");
+labelNameCharacter.className = "labelNameCharacter";
 
 const labelTypeCharacter = document.createElement("p");
 labelTypeCharacter.className = "labelTypeCharacter";
 
-const labelStatusCharacter=document.createElement("p")
-labelStatusCharacter.className="labelStatusCharacter"
+const labelStatusCharacter = document.createElement("p");
+labelStatusCharacter.className = "labelStatusCharacter";
 
-const labelLocationCharacter=document.createElement("p")
-labelLocationCharacter.className="labelLocationCharacter"
+const labelLocationCharacter = document.createElement("p");
+labelLocationCharacter.className = "labelLocationCharacter";
 
-const labelGenderCharacter=document.createElement("p")
-labelGenderCharacter.className="labelGenderCharacter"
-
+const labelGenderCharacter = document.createElement("p");
+labelGenderCharacter.className = "labelGenderCharacter";
 
 const imgSubWindowEpisode = document.createElement("img");
 imgSubWindowEpisode.className = "imgSubWindowEpisode";
+
+const imgSubWindowEpisode1 = document.createElement("img");
+imgSubWindowEpisode1.className = "imgSubWindowEpisode";
+
+const nameSubWindowLocation = document.createElement("p");
+nameSubWindowLocation.className = "nameSubWindowLocation";
+
+const locationNameSubWindowLocation = document.createElement("p");
+locationNameSubWindowLocation.className = "locationNameSubWindowLocation";
+
+const dimensionNameSubWindowLocation = document.createElement("p");
+dimensionNameSubWindowLocation.className = "dimensionNameSubWindowLocation";
 
 let rickAndMorty = {
   characters: "https://rickandmortyapi.com/api/character",
@@ -321,9 +349,11 @@ const setEpisodes = (episodes) => {
                 genderCharacterCard.style.color = "pink";
                 genderCharacterCard.style.textAlign = "center";
               }
+
               const containerButtonEpisode = document.createElement("div");
               containerButtonEpisode.className = "containerButtonEpisode";
               characterCard.appendChild(containerButtonEpisode);
+              /* Crear button de episodios */
 
               const buttonEpisode = document.createElement("button");
               buttonEpisode.className = "buttonEpisode";
@@ -342,79 +372,78 @@ const setEpisodes = (episodes) => {
                 windowEpisode.appendChild(subWindowEpisode);
                 subWindowEpisode.appendChild(imgSubWindowEpisode);
                 windowEpisode.appendChild(subWindowEpisode1);
-                subWindowEpisode.appendChild(characterSubWindowEpisode)
+                subWindowEpisode.appendChild(characterSubWindowEpisode);
 
-                characterSubWindowEpisode.appendChild(labelNameCharacter)
+                characterSubWindowEpisode.appendChild(labelNameCharacter);
                 characterSubWindowEpisode.appendChild(labelTypeCharacter);
-                characterSubWindowEpisode.appendChild(labelGenderCharacter)
-                characterSubWindowEpisode.appendChild(labelStatusCharacter)
-                characterSubWindowEpisode.appendChild(labelLocationCharacter)
+                characterSubWindowEpisode.appendChild(labelGenderCharacter);
+                characterSubWindowEpisode.appendChild(labelStatusCharacter);
+                characterSubWindowEpisode.appendChild(labelLocationCharacter);
 
                 imgSubWindowEpisode.src = character.image;
-                labelNameCharacter.innerText=character.name
-                labelTypeCharacter.innerText = character.species
+                labelNameCharacter.innerText = character.name;
+                labelTypeCharacter.innerText = character.species;
                 switch (character.species) {
                   case "Human":
                     labelTypeCharacter.innerHTML =
                       "<i class='fa fa-solid fa-user fa-xl'></i> " +
-                      character.species
+                      character.species;
                     labelTypeCharacter.style.color = "pink";
                     break;
                   case "Animal":
                     labelTypeCharacter.innerHTML =
                       "<i class='fa fa-solid fa-frog fa-xl'></i> " +
-                      character.species
+                      character.species;
                     labelTypeCharacter.style.color = "yellow";
                     break;
                   case "Disease":
                     labelTypeCharacter.innerHTML =
                       "<i class='fa fa-solid fa-ghost fa-xl'></i> " +
-                      character.species
+                      character.species;
                     featuresCharacterCard.style.color = "black";
                     break;
                   case "Alien":
                     labelTypeCharacter.innerHTML =
                       "<i class='fa fa-brands fa-reddit-alien fa-xl'></i> " +
-                      character.species
+                      character.species;
                     labelTypeCharacter.style.color = "#4dff00";
                     break;
                   case "Humanoid":
                     labelTypeCharacter.innerHTML =
                       "<i class='fa fa-solid fa-robot fa-xl'></i> " +
-                      character.species
+                      character.species;
                     labelTypeCharacter.style.color = "blue";
                     break;
                   case "Cronenberg":
                     labelTypeCharacter.innerHTML =
                       "<i class='fa fa-solid fa-clock fa-xl'></i> " +
-                      character.species
+                      character.species;
                     labelTypeCharacter.style.color = "#ED5C81";
                     break;
-  
+
                   case "Mythological Creature":
                     labelTypeCharacter.innerHTML =
                       "<i class='fa fa-solid fa-dove fa-xl'></i> " +
-                      character.species
+                      character.species;
                     labelTypeCharacter.style.color = "#60F7CD";
                     break;
                   case "Poopybutthole":
                     labelTypeCharacter.innerHTML =
                       "<i class='fa fa-brands fa-atlassian fa-xl'></i> " +
-                      character.species
+                      character.species;
                     labelTypeCharacter.style.color = "60F4F7";
                     break;
                   case "Artificial Intelligence":
                     labelTypeCharacter.innerHTML =
                       "<i class='fa fa-solid fa-brain fa-xl'></i> " +
-                      character.species
+                      character.species;
                     labelTypeCharacter.style.color = "#5CEDC7";
                     break;
-  
+
                   default:
                     break;
                 }
                 if (character.gender === "Male") {
-                  
                   labelGenderCharacter.innerHTML =
                     "Male <i class='fa fa-solid fa-mars fa-lg'></i>";
                   labelGenderCharacter.style.color = "blue";
@@ -422,96 +451,93 @@ const setEpisodes = (episodes) => {
                   labelGenderCharacter.innerHTML =
                     "Female <i class='fa fa-solid fa-venus fa-lg'></i>";
                   labelGenderCharacter.style.color = "pink";
-                  
                 }
-
 
                 switch (character.status) {
                   case "Alive":
                     labelStatusCharacter.innerHTML =
-                    "<i class='fa fa-solid fa-dna fa-xl'></i> " +
-                    character.status
-                  labelStatusCharacter.style.color = "white";
-                    
+                      "<i class='fa fa-solid fa-dna fa-xl'></i> " +
+                      character.status;
+                    labelStatusCharacter.style.color = "white";
+
                     break;
-                    case "Dead":
-                      labelStatusCharacter.innerHTML =
-                      
-                    "<i class='fa fa-solid fa-skull fa-xl'></i> " +
-                    character.status
-                  labelStatusCharacter.style.color = "black";
-                    
+                  case "Dead":
+                    labelStatusCharacter.innerHTML =
+                      "<i class='fa fa-solid fa-skull fa-xl'></i> " +
+                      character.status;
+                    labelStatusCharacter.style.color = "black";
+
                     break;
-                
-                  
-                    
                 }
 
-                
-                labelLocationCharacter.innerHTML= "<i class='fa fa-solid fa-globe fa-xl'></i> " +
-                character.location.name
-              labelLocationCharacter.style.color = "aqua";
-               console.log(character);
+                labelLocationCharacter.innerHTML =
+                  "<i class='fa fa-solid fa-globe fa-xl'></i> " +
+                  character.location.name;
+                labelLocationCharacter.style.color = "aqua";
+                console.log(character);
 
                 character.episode.forEach((episode) => {
                   /* Obtener episodio */
                   fetch(rickAndMorty.episodes + "/" + episode.slice(40))
                     .then((res) => res.json())
                     .then((setEpisode) => {
-
-
                       setTimeout(() => {
-                        let a = document.querySelectorAll(".divSubWindowEpisode");
-          
+                        let a = document.querySelectorAll(
+                          ".divSubWindowEpisode"
+                        );
+
                         a.forEach((b) => {
                           b.remove();
                         });
                       }, 100);
 
-
                       setTimeout(() => {
-                        const divSubWindowEpisode = document.createElement("div");
+                        const divSubWindowEpisode =
+                          document.createElement("div");
                         divSubWindowEpisode.className = "divSubWindowEpisode";
-  
+
                         const titleDivSubWindowEpisode =
                           document.createElement("p");
                         titleDivSubWindowEpisode.className =
                           "titleDivSubWindowEpisode";
-  
+
                         const titleEpisodeDivSubWindowEpisode =
                           document.createElement("p");
                         titleEpisodeDivSubWindowEpisode.className =
                           "titleEpisodeDivSubWindowEpisode";
-  
+
                         const titleDateCreateDivSubWindowEpisode =
                           document.createElement("p");
                         titleDateCreateDivSubWindowEpisode.className =
                           "titleDateCreateDivSubWindowEpisode";
-  
-                          subWindowEpisode1.appendChild(divSubWindowEpisode)
-  
-                          divSubWindowEpisode.appendChild(titleDivSubWindowEpisode);
-                          divSubWindowEpisode.appendChild(
+
+                        subWindowEpisode1.appendChild(divSubWindowEpisode);
+
+                        divSubWindowEpisode.appendChild(
+                          titleDivSubWindowEpisode
+                        );
+                        divSubWindowEpisode.appendChild(
                           titleEpisodeDivSubWindowEpisode
                         );
                         divSubWindowEpisode.appendChild(
                           titleDateCreateDivSubWindowEpisode
                         );
-  
+
                         titleDivSubWindowEpisode.style.display = "block";
                         titleEpisodeDivSubWindowEpisode.style.display = "block";
                         titleDateCreateDivSubWindowEpisode.style.display =
                           "block";
-  
-                        titleDivSubWindowEpisode.innerText = setEpisode.name;
-                        titleEpisodeDivSubWindowEpisode.innerHTML ="<i class='fa fa-solid fa-video '> "+ setEpisode.episode+"</i>"
-                          ;
-                        titleDateCreateDivSubWindowEpisode.innerHTML=
-                        "<i class='fa fa-solid fa-calendar-day'> "+setEpisode.created+"</i>"
-                        
-                      }, 200);
-                     
 
+                        titleDivSubWindowEpisode.innerText = setEpisode.name;
+                        titleEpisodeDivSubWindowEpisode.innerHTML =
+                          "<i class='fa fa-solid fa-video '> " +
+                          setEpisode.episode +
+                          "</i>";
+                        titleDateCreateDivSubWindowEpisode.innerHTML =
+                          "<i class='fa fa-solid fa-calendar-day'> " +
+                          setEpisode.created +
+                          "</i>";
+                      }, 200);
                     })
                     .catch((e) => console.log(e)); /*  */
                 });
@@ -530,9 +556,110 @@ const setEpisodes = (episodes) => {
               linkEpisode.innerHTML =
                 "<i class='fa fa-solid fa-video fa-xl'></i>";
 
+              /* Crear button de locations */
+
               const buttonEpisode2 = document.createElement("button");
               buttonEpisode2.className = "buttonEpisode1";
               containerButtonEpisode.appendChild(buttonEpisode2);
+
+              buttonEpisode2.addEventListener("click", (e) => {
+                e.target = videoCardContainer.appendChild(containerEpisode1);
+                containerEpisode1.style.display = "block";
+                bodyBodyRoot.appendChild(containerEpisode1);
+
+                containerEpisode1.appendChild(containerButtonExit);
+                containerButtonExit.appendChild(buttonExit);
+                buttonExit.innerText = "X";
+
+                buttonExit.addEventListener("click", (e) => {
+                  e.preventDefault();
+                  e.target = containerEpisode1.style.display = "none";
+                });
+                containerEpisode1.appendChild(windowEpisode1);
+                windowEpisode1.appendChild(subWindowEpisode3);
+                windowEpisode1.appendChild(subWindowEpisode4);
+                subWindowEpisode3.appendChild(imgSubWindowEpisode1);
+                imgSubWindowEpisode1.src = character.image;
+                subWindowEpisode3.appendChild(nameSubWindowLocation);
+                nameSubWindowLocation.innerText = character.name;
+                subWindowEpisode3.appendChild(locationNameSubWindowLocation);
+                locationNameSubWindowLocation.innerText =
+                  character.location.name;
+                console.log(character.location.url.slice(41));
+
+                fetch(
+                  rickAndMorty.locations +
+                    "/" +
+                    character.location.url.slice(41)
+                )
+                  .then((res) => res.json())
+                  .then((location) => {
+                    console.log(location.residents);
+                    subWindowEpisode3.appendChild(
+                      dimensionNameSubWindowLocation
+                    );
+                    dimensionNameSubWindowLocation.innerText =
+                      location.dimension;
+
+                    let prueba = location.residents.map((resident, index) => {
+                      return resident.slice(42).toString();
+                    });
+                    let a = prueba.toString();
+                    console.log(prueba.toString());
+                    console.log(rickAndMorty.characters + "/" + a);
+
+                    fetch(rickAndMorty.characters + "/" + a)
+                      .then((es) => es.json())
+                      .then((peoples) => {
+                        console.log(peoples);
+                        peoples.forEach((people) => {
+
+                          setTimeout(() => {
+                            let a = document.querySelectorAll(
+                              ".containerSubWindowLocation"
+                            );
+    
+                            a.forEach((b) => {
+                              b.remove();
+                            });
+                            
+                          }, 50);
+
+                          setTimeout(() => {
+                            const containerSubWindowLocation =
+                            document.createElement("div");
+                          containerSubWindowLocation.className =
+                            "containerSubWindowLocation";
+                          subWindowEpisode4.appendChild(
+                            containerSubWindowLocation
+                          );
+                          const imgContainerSubWindowLocation =
+                            document.createElement("img");
+                          imgContainerSubWindowLocation.className =
+                            "imgContainerSubWindowLocation";
+                          containerSubWindowLocation.appendChild(
+                            imgContainerSubWindowLocation
+                          );
+                          const nameContainerSubWindowLocation =
+                            document.createElement("p");
+                          nameContainerSubWindowLocation.className =
+                            "nameContainerSubWindowLocation";
+                          containerSubWindowLocation.appendChild(
+                            nameContainerSubWindowLocation
+                          );
+
+                           imgContainerSubWindowLocation.src=people.image
+                          nameContainerSubWindowLocation.innerText =
+                            people.name;
+                            
+                          }, 200);
+                         
+                        });
+                      })
+                      .catch((e) => console.log(e));
+                  })
+                  .catch((e) => console.log(e));
+              });
 
               const linkEpisode2 = document.createElement("a");
               linkEpisode2.className = "linkEpisode2";
