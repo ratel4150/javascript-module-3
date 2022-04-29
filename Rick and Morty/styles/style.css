@@ -13,6 +13,25 @@
   padding: 0px;
   box-sizing: border-box;
 }
+html {
+  font-size: 16px;
+}
+h1{
+  font-size: 32px;
+
+}
+h2{
+  font-size: 26px;
+
+}
+h3{
+  font-size: 22px;
+
+}
+h4{
+  font-size: 18px;
+
+}
 #root {
   width: 100vw;
   height: 100vh;
@@ -31,11 +50,11 @@
 }
 
 .divLogoHeaderRoot {
-  width: 30%;
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: center;
-  padding: 20px;
+  
 }
 .titleHeaderRoot {
   display: block;
@@ -59,39 +78,60 @@
   margin-left: 3px;
   margin-right: 3px;
   color: gray;
-  font-size: 20px;
+  /* font-size: 20px; */
 }
 #root__body {
   height: 85%;
 
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-around;
 }
 
 #body__aside {
-  width: 10%;
+  width: 100%;
+  height: 16%;
   background-color: rgba(25, 23, 23, 0.934);
-  overflow-y: scroll;
-  overflow-x: hidden;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
 
 .ulAsideBodyRoot {
+  list-style-type: none;
   width: 100%;
   padding: 20px;
+  display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
 }
 
 .liUlAsideBodyRoot {
-  list-style-type: none;
-
   width: 100%;
+  height: 110%;
   cursor: context-menu;
+  margin: 3px;
+  padding: 4px;
+  
+  
+
+  /* list-style-type: none;
+  width: 100%;
+  height: 110%;
+  cursor: context-menu;
+  margin: 3px;
+  padding: 4px;
+  border: 1px solid white; */
 }
 
 .aLiUlAsideBodyRoot {
   /* font-family: "transrobotic"; */
   font-family: "Roboto", sans-serif;
-  font-size: 15px;
+  /* font-size: 15px; */
+  
   color: white;
 }
 .aLiUlAsideBodyRoot:hover {
@@ -99,7 +139,8 @@
 }
 
 #body__body {
-  width: 90%;
+  width: 100%;
+  height: 84%;
 
   /*  display: flex;
     flex-direction: row;
@@ -147,6 +188,8 @@
 }
 
 .characterCard {
+  max-width: 200px;
+  overflow-wrap: break-word;
   overflow: hidden;
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
@@ -204,13 +247,14 @@
 
 .imgSubWindowEpisode{
   border-radius: 25px;
+  max-width: 100%;
   border: 1px white outset;
   filter: drop-shadow(0 0 0.75rem rgb(5, 5, 5));
 }
 .labelNameCharacter{
   color: white;
   font-family: 'Fredoka One', cursive;
-  font-size: 26px;
+  /* font-size: 26px; */
   filter: drop-shadow(1px 1px 1px black);
   /* font-family: 'Patrick Hand', cursive; */
 
@@ -218,26 +262,26 @@
 .labelTypeCharacter{
   font-family: 'Patrick Hand', cursive;
   filter: drop-shadow(1px 1px 1px black);
-  font-size: 20px;
+ /*  font-size: 20px; */
 
 }
 .labelStatusCharacter{
   font-family: 'Patrick Hand', cursive;
   filter: drop-shadow(1px 1px 1px black);
-  font-size: 20px;
+  /* font-size: 20px; */
 
 }
 
 .labelLocationCharacter{
   font-family: 'Patrick Hand', cursive;
   filter: drop-shadow(1px 1px 1px black);
-  font-size: 20px;
+  /* font-size: 20px; */
 
 }
 .labelGenderCharacter{
   font-family: 'Patrick Hand', cursive;
   filter: drop-shadow(1px 1px 1px black);
-  font-size: 20px;
+  /* font-size: 20px; */
 
 }
 .containerButtonEpisode {
@@ -282,13 +326,13 @@
   -webkit-backdrop-filter: blur(5px);
 }
 .buttonEpisode a {
-  font-size: 15px;
+  /* font-size: 15px; */
   color: white;
   filter: drop-shadow(1px 1px 1px gray);
 }
 
 .buttonEpisode1 a {
-  font-size: 15px;
+/*   font-size: 15px; */
   color: white;
   filter: drop-shadow(1px 1px 1px gray);
 }
@@ -302,7 +346,7 @@
   width: 80%;
   height: 80%;
 
-  background: rgba(255, 255, 255, 0);
+  background: rgba(0, 0, 0, 0.21);
   border-radius: 40px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(5.9px);
@@ -486,35 +530,383 @@ border: 1px solid rgba(255, 255, 255, 0.02);
 ::-webkit-scrollbar-corner {
   background: transparent;
 }
-
+/* Queries */
 @media (min-width: 640px) {
+  .ulAsideBodyRoot {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+  
+  }
+  
+  .liUlAsideBodyRoot {
+    width: 100%;
+    height: 110%;
+    cursor: context-menu;
+    margin: 3px;
+    padding: 4px;
+    border: 1px solid white;
+  
+  
+    /* list-style-type: none;
+    width: 100%;
+    height: 110%;
+    cursor: context-menu;
+    margin: 3px;
+    padding: 4px;
+    border: 1px solid white; */
+  }
+  .ulAsideBodyRoot {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    list-style-type: none;
+  }
+  .characterCard {
+    height: auto;
+    width: auto;
+  }
+  html {
+    font-size: 16px;
+  }
+  h1{
+    font-size: 32px;
+  
+  }
+  h2{
+    font-size: 26px;
+  
+  }
+  h3{
+    font-size: 22px;
+  
+  }
+  h4{
+    font-size: 18px;
+  
+  }
+ 
 }
 
 @media (min-width: 768px) {
-  .characterCard {
-    height: 30%;
-    width: 20%;
+  .ulAsideBodyRoot {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+  
   }
+  
+  .liUlAsideBodyRoot {
+    width: 100%;
+    height: 110%;
+    cursor: context-menu;
+    margin: 3px;
+    padding: 4px;
+    
+    list-style-type: none;
+  
+    /* list-style-type: none;
+    width: 100%;
+    height: 110%;
+    cursor: context-menu;
+    margin: 3px;
+    padding: 4px;
+    border: 1px solid white; */
+  }
+  .ulAsideBodyRoot {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    
+  }
+  #root__body {
+    height: 85%;
+  
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  #body__aside {
+    width: 100%;
+    overflow-x: scroll;
+      overflow-y: hidden;
+    
+  }
+  .characterCard {
+    height: auto;
+    width: auto;
+  }
+  html {
+    font-size: 16px;
+  }
+  h1{
+    font-size: 40px;
+  
+  }
+  h2{
+    font-size: 32px;
+  
+  }
+  h3{
+    font-size: 24px;
+  
+  }
+  h4{
+    font-size: 18px;
+  
+  }
+  
+ 
+  
+
 }
 
 @media (min-width: 1024px) {
+  .ulAsideBodyRoot {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+  
+  }
+  
+  .liUlAsideBodyRoot {
+    width: 100%;
+    list-style-type: none;
+    border: none;
+    cursor: context-menu;
+   
+  
+  
+    /* list-style-type: none;
+    width: 100%;
+    height: 110%;
+    cursor: context-menu;
+    margin: 3px;
+    padding: 4px;
+    border: 1px solid white; */
+  }
+  .ulAsideBodyRoot {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+  }
+  #root__body {
+    height: 85%;
+  
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
   .characterCard {
-    height: 60%;
-    width: 11%;
+    height: auto;
+    width: auto;
+  }
+  #body__aside {
+    width: 15%;
+    height: 100%;
+    overflow-y: scroll;
+      overflow-x: hidden;
+    
+  }
+  #body__body {
+    width: 85%;
+    height: 100%;
+  
+  }
+  html {
+    font-size: 16px;
+  }
+  h1{
+    font-size: 48px;
+  
+  }
+  h2{
+    font-size: 36px;
+  
+  }
+  h3{
+    font-size: 28px;
+  
+  }
+  h4{
+    font-size: 18px;
+  
+  }
+ 
+
+  .divIconsHeaderRoot {
+    width: 60%;
+    
   }
 }
 @media (min-width: 1280px) {
-  .characterCard {
-    height: 82%;
-    width: 13%;
+  .liUlAsideBodyRoot {
+    width: 100%;
+    list-style-type: none;
+    border: none;
+    cursor: context-menu;
+   
+  
+  
+    /* list-style-type: none;
+    width: 100%;
+    height: 110%;
+    cursor: context-menu;
+    margin: 3px;
+    padding: 4px;
+    border: 1px solid white; */
   }
+  .ulAsideBodyRoot {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+  }
+  #root__body {
+    height: 85%;
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .characterCard {
+    height: auto;
+    width: auto;
+  }
+  #body__aside {
+    width: 11%;
+    height: 100%;
+      overflow-y: scroll;
+      overflow-x: hidden;
+    
+  }
+  
+  #body__body {
+    
+    width: 89%;
+  
+  }
+  html {
+    font-size: 16px;
+  }
+  h1{
+    font-size: 48px;
+  
+  }
+  h2{
+    font-size: 26px;
+  
+  }
+  h3{
+    font-size: 28px;
+  
+  }
+  h4{
+    font-size: 18px;
+  
+  }
+ 
 }
 @media (min-width: 1536px) {
-  .characterCard {
-    height: 65%;
-    width: 15%;
+  .liUlAsideBodyRoot {
+    list-style-type: none;
+    border: none;
+    
+    width: 100%;
+    
+    cursor: context-menu;
+   
+  
+  
+    /* list-style-type: none;
+    width: 100%;
+    height: 110%;
+    cursor: context-menu;
+    margin: 3px;
+    padding: 4px;
+    border: 1px solid white; */
   }
+  .ulAsideBodyRoot {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+  }
+  #root__body {
+    height: 85%;
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .characterCard {
+    height: auto;
+    width: auto;
+  }
+  #body__aside {
+      
+      background-color: rgba(25, 23, 23, 0.934);
+      overflow-y: scroll;
+      overflow-x: hidden;
+    width: 8%;
+    height: 100%;
+    
+  }
+  #body__body {
+    width: 92%;
+  
+  }
+  html {
+    font-size: 16px;
+  }
+  h1{
+    font-size: 32px;
+  
+  }
+  h2{
+    font-size: 26px;
+  
+  }
+  h3{
+    font-size: 22px;
+  
+  }
+  h4{
+    font-size: 18px;
+  
+  }
+
+  .divLogoHeaderRoot{
+    width: 20%;
+
+  }
+
+.divIconsHeaderRoot{
+  width: 80%;
+
 }
+ 
+}
+
+/* Animation */
 
 @keyframes myAnim1 {
   0% {
@@ -672,3 +1064,10 @@ border: 1px solid rgba(255, 255, 255, 0.02);
     transform: translateX(0) rotate(0deg);
   }
 }
+
+
+
+/* Fluid typography formula */
+
+
+/* Define max font size */

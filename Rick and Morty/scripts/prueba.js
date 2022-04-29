@@ -1,3 +1,9 @@
+
+
+const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0) 
+
+
+
 const body = document.querySelector("body");
 const root = document.getElementById("root");
 //
@@ -136,6 +142,9 @@ imgSubWindowEpisode.className = "imgSubWindowEpisode";
 const imgSubWindowEpisode1 = document.createElement("img");
 imgSubWindowEpisode1.className = "imgSubWindowEpisode";
 
+const containerSubWindowLocationW=document.createElement("div")
+containerSubWindowLocationW.className="containerSubWindowLocationW"
+
 const nameSubWindowLocation = document.createElement("p");
 nameSubWindowLocation.className = "nameSubWindowLocation";
 
@@ -165,8 +174,17 @@ const setEpisodes = (episodes) => {
     ulAsideBodyRoot.appendChild(liUlAsideBodyRoot);
     liUlAsideBodyRoot.appendChild(aLiUlAsideBodyRoot);
     /* aLiUlAsideBodyRoot.innerText="Episodio "+element.id */
-    aLiUlAsideBodyRoot.innerHTML =
+
+    if (vw>=1024) {
+      aLiUlAsideBodyRoot.innerHTML =
       "<i class=' fa fa-solid fa-video fa-xl'> episode " + element.id + "</i>";
+    } else {
+       aLiUlAsideBodyRoot.innerHTML =
+      "<i class=' fa fa-solid fa-video fa-xl'> " + element.id + "</i>"; 
+      
+      
+    }
+   
   });
   /* ------------------------------------------------- */
   /*  */
@@ -175,7 +193,17 @@ const setEpisodes = (episodes) => {
   aLiUls.forEach((aLiUl) => {
     aLiUl.addEventListener("click", (e) => {
       e.preventDefault();
-      let number = parseInt(e.target.innerText.toString().slice(8));
+      let number
+
+      if (vw>=1024) {
+      number= parseInt(e.target.innerText.toString().slice(8));
+      } else {
+        number= parseInt(e.target.innerText);
+      }
+      console.log(number);
+     
+      
+       
       console.log(number);
       numberEpisode = number - 1;
       h2.innerText = e.target.innerText + " " + episodes[numberEpisode].name;
@@ -248,7 +276,7 @@ const setEpisodes = (episodes) => {
               characterCard.appendChild(imageCharacterCard);
               imageCharacterCard.src = character.image;
 
-              const nameCharacterCard = document.createElement("h3");
+              const nameCharacterCard = document.createElement("h4");
               nameCharacterCard.className = "nameCharacterCard";
               characterCard.appendChild(nameCharacterCard);
               nameCharacterCard.innerText = "NameCharacter";
@@ -578,11 +606,12 @@ const setEpisodes = (episodes) => {
                 containerEpisode1.appendChild(windowEpisode1);
                 windowEpisode1.appendChild(subWindowEpisode3);
                 windowEpisode1.appendChild(subWindowEpisode4);
+                subWindowEpisode3.appendChild(containerSubWindowLocationW)
                 subWindowEpisode3.appendChild(imgSubWindowEpisode1);
                 imgSubWindowEpisode1.src = character.image;
-                subWindowEpisode3.appendChild(nameSubWindowLocation);
+                containerSubWindowLocationW.appendChild(nameSubWindowLocation);
                 nameSubWindowLocation.innerText = character.name;
-                subWindowEpisode3.appendChild(locationNameSubWindowLocation);
+                containerSubWindowLocationW.appendChild(locationNameSubWindowLocation);
                 locationNameSubWindowLocation.innerText =
                   character.location.name;
                 console.log(character.location.url.slice(41));
@@ -595,7 +624,7 @@ const setEpisodes = (episodes) => {
                   .then((res) => res.json())
                   .then((location) => {
                     console.log(location.residents);
-                    subWindowEpisode3.appendChild(
+                    containerSubWindowLocationW.appendChild(
                       dimensionNameSubWindowLocation
                     );
                     dimensionNameSubWindowLocation.innerText =
@@ -696,5 +725,6 @@ const searchEpisode = () => {
 
 const ready = () => {
   searchEpisode();
+  
 };
 document.addEventListener("DOMContentLoaded", ready);
