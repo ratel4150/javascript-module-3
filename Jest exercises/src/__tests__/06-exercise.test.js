@@ -21,14 +21,15 @@ describe("06-exercises", () => {
    * done callback
    */
   test("asyncAdd returns the sum of the numbers", () => {
-    
+    expect.assertions(1);
 
     asyncAdd(5, 5, callback);
 
     // Finish the test
      function callback(result) {
-      expect.assertions(1);
+      
        expect(result).toBe(10);
+       done()
       
       
     } 
@@ -54,12 +55,12 @@ describe("06-exercises", () => {
     
 
     // Finish the test
-   fetchUserOK(userID).then((user)=>{
+ 
     expect.assertions(1);
+    const result = await fetchUserOK(userID);
+    expect(result).toEqual(expectedUser);
     
-     expect(user).toStrictEqual(expectedUser)
-
-   })
+    
   
   });
 
@@ -86,7 +87,7 @@ describe("06-exercises", () => {
     await(fetchUserFail(userID))
     
   } catch (error) {
-    expect(error).toMatch(expectedMessage)
+    expect(error).toEqual(expectedMessage)
     
   }
   });
